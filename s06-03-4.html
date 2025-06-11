@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let completed = true;
+        let getData = new Promise(function (resolve, reject) {
+            setTimeout(() => {
+                if (completed) {
+                    resolve("Donnee recuperee");
+                }
+                else {
+                    reject("je n'ai pas pu recupere la donnee");
+                }
+            }, 3000);
+        }
+    );
+
+    getData.then(msg => console.log(msg)).catch(msg => console.log(msg));
+
+    //promiseObject.then(onFulfilled, onRejected);
+    //promiseObject.then(onFulfilled).catch(onRejected);
+    console.log("Mon message");
+    </script>
+</body>
+</html>
